@@ -10,8 +10,6 @@ LABEL maintainer="nemchik"
 # environment settings
 ENV NZBHYDRA2_RELEASE_TYPE="Release"
 
-RUN pip3 install apprise==0.9.7 
-
 RUN \
   echo "**** install packages ****" && \
   apk add -U --no-cache --virtual=build-dependencies \
@@ -45,6 +43,8 @@ RUN \
     build-dependencies && \
   rm -rf \
     /tmp/*
+    
+RUN pip3 install apprise==0.9.7 
 
 # copy local files
 COPY root/ /
