@@ -10,6 +10,8 @@ LABEL maintainer="nemchik"
 # environment settings
 ENV NZBHYDRA2_RELEASE_TYPE="Release"
 
+RUN pip3 install apprise==0.9.7 
+
 RUN \
   echo "**** install packages ****" && \
   apk add -U --no-cache --virtual=build-dependencies \
@@ -17,6 +19,7 @@ RUN \
   apk add -U --no-cache \
     curl \
     jq \
+    py3-pip \
     openjdk11-jre-headless \
     python3 && \
   echo "**** install nzbhydra2 ****" && \
