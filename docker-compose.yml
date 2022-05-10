@@ -1,7 +1,7 @@
 ---
 version: "2.1"
 services:
-  nzbhydra2:
+  nzbhydr2a2:
     image: lscr.io/linuxserver/nzbhydra2
     container_name: nzbhydra2
     environment:
